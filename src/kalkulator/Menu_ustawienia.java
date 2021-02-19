@@ -20,27 +20,9 @@ public class Menu_ustawienia extends javax.swing.JFrame {
         initComponents();
         ustawienia_local = ustawienia;
         ustawienia_local.applySettings(getContentPane());
-                //!!!!!!  ustawienie stylu wszystkich elementów
+             
         
-        /*
-        //czcionka
-        jButton1.setForeground(ustawienia.getFontColor());
-        jButton2.setForeground(ustawienia.getFontColor());
-        jButton3.setForeground(ustawienia.getFontColor());
-        jButton4.setForeground(ustawienia.getFontColor());
-      
-        
-        //tło przycisków
-        jButton1.setBackground(ustawienia.getButtonColor());
-        jButton2.setBackground(ustawienia.getButtonColor());
-        jButton3.setBackground(ustawienia.getButtonColor());
-        jButton4.setBackground(ustawienia.getButtonColor());
-        
-        
-        //tło
-        getContentPane().setBackground(ustawienia.getBackgroundColor());
-        
-        */
+ 
         
         
     }

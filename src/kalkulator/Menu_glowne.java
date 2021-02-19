@@ -24,25 +24,7 @@ public class Menu_glowne extends javax.swing.JFrame {
         ustawienia_local.applySettings(getContentPane());
         
         
-        //!!!!!!  ustawienie stylu wszystkich elementów
-        
-        /*
-        //czcionka
-        jButton1.setForeground(ustawienia.getFontColor());
-        jButton2.setForeground(ustawienia.getFontColor());
-        jButton3.setForeground(ustawienia.getFontColor());
-        
-        jLabel1.setForeground(ustawienia.getFontColor());
-        
-        //tło przycisków
-        jButton1.setBackground(ustawienia.getButtonColor());
-        jButton2.setBackground(ustawienia.getButtonColor());
-        jButton3.setBackground(ustawienia.getButtonColor());
-        
-        
-        //tło
-        
-        */
+ 
     }
 
     /**
