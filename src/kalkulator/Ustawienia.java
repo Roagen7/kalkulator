@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
 /**
@@ -53,7 +54,7 @@ public class Ustawienia {
      
      
     public void applyComponentSettings(Component comp){
-        if(comp instanceof JPanel || comp instanceof JTabbedPane){
+        if(comp instanceof JPanel || comp instanceof JTabbedPane || comp instanceof JScrollPane){
             comp.setBackground(background_color);
             this.applySettings(comp);
         }
@@ -76,6 +77,15 @@ public class Ustawienia {
          
          if(body instanceof JTabbedPane){
             for(Component comp : ((JTabbedPane) body).getComponents()){
+                applyComponentSettings(comp);
+            }
+         
+         }
+         
+          if(body instanceof JScrollPane){
+            for(Component comp : ((JScrollPane) body).getComponents()){
+                
+                
                 applyComponentSettings(comp);
             }
          
