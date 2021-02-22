@@ -46,6 +46,7 @@ public class Panel extends javax.swing.JFrame {
         historia_zapisz = new javax.swing.JButton();
         historia_zamknij = new javax.swing.JButton();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jFileChooser1 = new javax.swing.JFileChooser();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -125,6 +126,11 @@ public class Panel extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         historia_zapisz.setText("do pliku");
+        historia_zapisz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historia_zapiszActionPerformed(evt);
+            }
+        });
 
         historia_zamknij.setText("zamknij");
         historia_zamknij.addActionListener(new java.awt.event.ActionListener() {
@@ -895,6 +901,11 @@ public class Panel extends javax.swing.JFrame {
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("zapisz do pliku");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuBar1.add(jMenu2);
@@ -1295,6 +1306,17 @@ public class Panel extends javax.swing.JFrame {
         denominator1.setText(denominator_wynik.getText());
         
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void historia_zapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historia_zapiszActionPerformed
+        // TODO add your handling code here:
+        FileHandler.saveVariableToFile(HISTORY, jFileChooser1);
+        
+    }//GEN-LAST:event_historia_zapiszActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        FileHandler.saveVariableToFile(HISTORY, jFileChooser1);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
     
     public int NWD(int a, int b){
         while(a != b){
@@ -1471,6 +1493,7 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

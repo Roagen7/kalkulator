@@ -57,6 +57,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="do pliku"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historia_zapiszActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="historia_zamknij">
           <Properties>
@@ -72,6 +75,8 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jMenuItem5"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JFileChooser" name="jFileChooser1">
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
@@ -115,6 +120,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="zapisz do pliku"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
