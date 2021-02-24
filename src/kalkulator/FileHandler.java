@@ -28,8 +28,8 @@ public class FileHandler {
                 
                 String lines[] = null;
                 lines = s.split("\n");
-                for(int i = 0; i < lines.length; i++){
-                    out.write(lines[i] + "\r\n");
+                for(String line : lines){
+                    out.write(line + "\r\n");
                 }
                 out.close();
             

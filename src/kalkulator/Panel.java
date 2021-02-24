@@ -5,6 +5,11 @@
  */
 package kalkulator;
 
+import java.awt.Component;
+import java.awt.List;
+import java.util.Arrays;
+import javax.swing.JToggleButton;
+
 
 /**
  *
@@ -15,6 +20,9 @@ public class Panel extends javax.swing.JFrame {
     /**
      * Creates new form Panel
      */
+    String bin_num = "000000000000";
+    String bin_num2 = "000000000000";
+    
     String HISTORY = "";
     String wybrane_dzialanie = "default";
     boolean nowe = false;
@@ -28,6 +36,9 @@ public class Panel extends javax.swing.JFrame {
         ustawienia_local = ustawienia;
         ustawienia_local.applySettings(getContentPane());
         ustawienia_local.applySettings(jDialog1.getContentPane());
+        
+        binum.setText(bin_num);
+        binum2.setText(bin_num2);
             
     }
 
@@ -92,7 +103,48 @@ public class Panel extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        infPanel = new javax.swing.JPanel();
+        binum = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        decnum = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        drugaLiczbaPanel = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        bramkaCombi = new javax.swing.JComboBox<>();
+        a1 = new javax.swing.JToggleButton();
+        a2 = new javax.swing.JToggleButton();
+        a3 = new javax.swing.JToggleButton();
+        a4 = new javax.swing.JToggleButton();
+        a5 = new javax.swing.JToggleButton();
+        a6 = new javax.swing.JToggleButton();
+        a7 = new javax.swing.JToggleButton();
+        a8 = new javax.swing.JToggleButton();
+        a9 = new javax.swing.JToggleButton();
+        a10 = new javax.swing.JToggleButton();
+        a11 = new javax.swing.JToggleButton();
+        a12 = new javax.swing.JToggleButton();
+        jButton10 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        binum2 = new javax.swing.JLabel();
+        decnum2 = new javax.swing.JLabel();
+        dzialanieNot = new javax.swing.JCheckBox();
+        jButton9 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        liczba_1 = new javax.swing.JPanel();
+        b1 = new javax.swing.JToggleButton();
+        b2 = new javax.swing.JToggleButton();
+        b3 = new javax.swing.JToggleButton();
+        b4 = new javax.swing.JToggleButton();
+        b5 = new javax.swing.JToggleButton();
+        b6 = new javax.swing.JToggleButton();
+        b7 = new javax.swing.JToggleButton();
+        b8 = new javax.swing.JToggleButton();
+        b9 = new javax.swing.JToggleButton();
+        b10 = new javax.swing.JToggleButton();
+        b11 = new javax.swing.JToggleButton();
+        b12 = new javax.swing.JToggleButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         numerator1 = new javax.swing.JTextField();
@@ -108,10 +160,11 @@ public class Panel extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        newton_n = new javax.swing.JTextField();
+        newton_k = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+        newton_wynik = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -631,7 +684,7 @@ public class Panel extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -647,18 +700,424 @@ public class Panel extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("naukowy", jPanel3);
 
+        jLabel5.setText("binarny");
+
+        jLabel6.setText("dziesiatkowy");
+
+        jLabel7.setText("druga liczba");
+
+        bramkaCombi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AND", "OR", "XOR" }));
+
+        a1.setText("0");
+        a1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a1ActionPerformed(evt);
+            }
+        });
+
+        a2.setText("0");
+        a2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a2ActionPerformed(evt);
+            }
+        });
+
+        a3.setText("0");
+        a3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a3ActionPerformed(evt);
+            }
+        });
+
+        a4.setText("0");
+        a4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a4ActionPerformed(evt);
+            }
+        });
+
+        a5.setText("0");
+        a5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a5ActionPerformed(evt);
+            }
+        });
+
+        a6.setText("0");
+        a6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a6ActionPerformed(evt);
+            }
+        });
+
+        a7.setText("0");
+        a7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a7ActionPerformed(evt);
+            }
+        });
+
+        a8.setText("0");
+        a8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a8ActionPerformed(evt);
+            }
+        });
+
+        a9.setText("0");
+        a9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a9ActionPerformed(evt);
+            }
+        });
+
+        a10.setText("0");
+        a10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a10ActionPerformed(evt);
+            }
+        });
+
+        a11.setText("0");
+        a11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a11ActionPerformed(evt);
+            }
+        });
+
+        a12.setText("0");
+        a12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a12ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("wykonaj działanie");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("binarny");
+
+        jLabel9.setText("dziesiatkowy");
+
+        dzialanieNot.setText("N");
+
+        javax.swing.GroupLayout drugaLiczbaPanelLayout = new javax.swing.GroupLayout(drugaLiczbaPanel);
+        drugaLiczbaPanel.setLayout(drugaLiczbaPanelLayout);
+        drugaLiczbaPanelLayout.setHorizontalGroup(
+            drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(a1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a4)
+                .addGap(24, 24, 24)
+                .addComponent(a5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(a6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a8)
+                .addGap(24, 24, 24)
+                .addComponent(a9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                .addGroup(drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(decnum2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(29, 29, 29)
+                        .addComponent(binum2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dzialanieNot)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bramkaCombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+        drugaLiczbaPanelLayout.setVerticalGroup(
+            drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, drugaLiczbaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGroup(drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton10)
+                            .addComponent(bramkaCombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dzialanieNot)))
+                    .addGroup(drugaLiczbaPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(binum2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(decnum2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(drugaLiczbaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(a1)
+                    .addComponent(a2)
+                    .addComponent(a3)
+                    .addComponent(a4)
+                    .addComponent(a5)
+                    .addComponent(a6)
+                    .addComponent(a7)
+                    .addComponent(a8)
+                    .addComponent(a9)
+                    .addComponent(a10)
+                    .addComponent(a12)
+                    .addComponent(a11))
+                .addGap(13, 13, 13))
+        );
+
+        drugaLiczbaPanel.setVisible(false);
+
+        jButton9.setText("NOT");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 314, Short.MAX_VALUE)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("programisty", jPanel2);
+        b1.setText("0");
+        b1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b1ActionPerformed(evt);
+            }
+        });
+
+        b2.setText("0");
+        b2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b2ActionPerformed(evt);
+            }
+        });
+
+        b3.setText("0");
+        b3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b3ActionPerformed(evt);
+            }
+        });
+
+        b4.setText("0");
+        b4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b4ActionPerformed(evt);
+            }
+        });
+
+        b5.setText("0");
+        b5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b5ActionPerformed(evt);
+            }
+        });
+
+        b6.setText("0");
+        b6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b6ActionPerformed(evt);
+            }
+        });
+
+        b7.setText("0");
+        b7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b7ActionPerformed(evt);
+            }
+        });
+
+        b8.setText("0");
+        b8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b8ActionPerformed(evt);
+            }
+        });
+
+        b9.setText("0");
+        b9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b9ActionPerformed(evt);
+            }
+        });
+
+        b10.setText("0");
+        b10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b10ActionPerformed(evt);
+            }
+        });
+
+        b11.setText("0");
+        b11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b11ActionPerformed(evt);
+            }
+        });
+
+        b12.setText("0");
+        b12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b12ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout liczba_1Layout = new javax.swing.GroupLayout(liczba_1);
+        liczba_1.setLayout(liczba_1Layout);
+        liczba_1Layout.setHorizontalGroup(
+            liczba_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, liczba_1Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(b1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b4)
+                .addGap(24, 24, 24)
+                .addComponent(b5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(b6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b8)
+                .addGap(24, 24, 24)
+                .addComponent(b9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b12)
+                .addContainerGap())
+        );
+        liczba_1Layout.setVerticalGroup(
+            liczba_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(liczba_1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(liczba_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b1)
+                    .addComponent(b2)
+                    .addComponent(b3)
+                    .addComponent(b4)
+                    .addComponent(b5)
+                    .addComponent(b6)
+                    .addComponent(b7)
+                    .addComponent(b8)
+                    .addComponent(b9)
+                    .addComponent(b10)
+                    .addComponent(b12)
+                    .addComponent(b11)))
+        );
+
+        jToggleButton1.setText("pokaz druga liczbe");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout infPanelLayout = new javax.swing.GroupLayout(infPanel);
+        infPanel.setLayout(infPanelLayout);
+        infPanelLayout.setHorizontalGroup(
+            infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infPanelLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5))
+                .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(binum, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(decnum, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton9)
+                        .addGap(197, 197, 197))))
+            .addGroup(infPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToggleButton1)
+                    .addGroup(infPanelLayout.createSequentialGroup()
+                        .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(liczba_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(drugaLiczbaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        infPanelLayout.setVerticalGroup(
+            infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infPanelLayout.createSequentialGroup()
+                .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(infPanelLayout.createSequentialGroup()
+                                .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(binum, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
+                                .addGroup(infPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(infPanelLayout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel6))
+                                    .addGroup(infPanelLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(decnum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addComponent(liczba_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton1)
+                .addGap(18, 18, 18)
+                .addComponent(drugaLiczbaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("programisty", infPanel);
 
         numerator1.setText("0");
         numerator1.addActionListener(new java.awt.event.ActionListener() {
@@ -803,13 +1262,22 @@ public class Panel extends javax.swing.JFrame {
                 .addGap(0, 76, Short.MAX_VALUE))
         );
 
-        jTextField1.setText("n");
-
-        jTextField2.setText("k");
+        newton_n.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newton_nActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("współczynnik dwumianowy Newtona");
 
         jButton8.setText("=");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        newton_wynik.setText("1");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -819,12 +1287,17 @@ public class Panel extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(219, 219, 219)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(newton_n, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(newton_k, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
                 .addComponent(jButton8)
+                .addGap(40, 40, 40)
+                .addComponent(newton_wynik, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -835,13 +1308,15 @@ public class Panel extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(newton_n, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(newton_k, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(24, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton8)
+                            .addComponent(newton_wynik))
                         .addGap(34, 34, 34))))
         );
 
@@ -855,7 +1330,7 @@ public class Panel extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1317,6 +1792,298 @@ public class Panel extends javax.swing.JFrame {
         // TODO add your handling code here:
         FileHandler.saveVariableToFile(HISTORY, jFileChooser1);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b1,1,true);
+    }//GEN-LAST:event_b1ActionPerformed
+
+    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b2,2,true);
+        
+    }//GEN-LAST:event_b2ActionPerformed
+
+    private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b3,3,true);
+    }//GEN-LAST:event_b3ActionPerformed
+
+    private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b4,4,true);
+    }//GEN-LAST:event_b4ActionPerformed
+
+    private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b5,5,true);
+    }//GEN-LAST:event_b5ActionPerformed
+
+    private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b6,6,true);
+    }//GEN-LAST:event_b6ActionPerformed
+
+    private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b7,7,true);
+    }//GEN-LAST:event_b7ActionPerformed
+
+    private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b8,8,true);
+    }//GEN-LAST:event_b8ActionPerformed
+
+    private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b9,9,true);
+    }//GEN-LAST:event_b9ActionPerformed
+
+    private void b10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b10ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b10,10,true);
+    }//GEN-LAST:event_b10ActionPerformed
+
+    private void b11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b11ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b11,11,true);
+    }//GEN-LAST:event_b11ActionPerformed
+
+    private void b12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b12ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(b12,12,true);
+    }//GEN-LAST:event_b12ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        for(int i = 0; i < bin_num.length(); i++){
+            if(bin_num.charAt(i) == '0'){
+                bin_num = InformatycznyFunkcje.changeStringAt(i, '1', bin_num);
+                
+            } else {
+                bin_num = InformatycznyFunkcje.changeStringAt(i, '0', bin_num);
+            }  
+            
+        }
+
+        fixBits();
+        refresh();
+        
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a1,1,false);
+    }//GEN-LAST:event_a1ActionPerformed
+
+    private void a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a2,2,false);
+    }//GEN-LAST:event_a2ActionPerformed
+
+    private void a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a3ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a3,3,false);
+    }//GEN-LAST:event_a3ActionPerformed
+
+    private void a4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a4ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a4,4,false);
+    }//GEN-LAST:event_a4ActionPerformed
+
+    private void a5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a5ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a5,5,false);
+    }//GEN-LAST:event_a5ActionPerformed
+
+    private void a6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a6ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a6,6,false);
+    }//GEN-LAST:event_a6ActionPerformed
+
+    private void a7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a7ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a7,7,false);
+    }//GEN-LAST:event_a7ActionPerformed
+
+    private void a8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a8ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a8,8,false);
+    }//GEN-LAST:event_a8ActionPerformed
+
+    private void a9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a9ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a9,9,false);
+    }//GEN-LAST:event_a9ActionPerformed
+
+    private void a10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a10ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a10,10,false);
+    }//GEN-LAST:event_a10ActionPerformed
+
+    private void a11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a11ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a11,11,false);
+    }//GEN-LAST:event_a11ActionPerformed
+
+    private void a12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a12ActionPerformed
+        // TODO add your handling code here:
+        handleTheClick(a12,12,false);
+    }//GEN-LAST:event_a12ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        String wynik = "000000000000";
+        char zero = '0';
+        char jeden = '1';
+        
+        
+        if(dzialanieNot.isSelected()){
+            zero = '1';
+            jeden = '0';
+        }
+        
+        for(int i = 0; i < 12; i++){
+            char c1 = bin_num.charAt(i);
+            char c2 = bin_num2.charAt(i);
+            
+            switch(bramkaCombi.getSelectedIndex()){
+                case 0:
+                    if(c2 == '1' && c1 == '1'){
+                        wynik = InformatycznyFunkcje.changeStringAt(i, jeden, wynik);
+                    
+                    } else {
+                        wynik = InformatycznyFunkcje.changeStringAt(i, zero, wynik);
+                    }
+                    
+                    break;
+            
+                case 1:
+                    if(c2 == '1' || c1 == '1'){
+                        wynik = InformatycznyFunkcje.changeStringAt(i, jeden, wynik);
+                    
+                    
+                    } else {
+                        wynik = InformatycznyFunkcje.changeStringAt(i, zero, wynik);
+                    }
+                    
+                    
+                    break;
+                    
+                case 2:
+                    if((c1 == '1' && c2 == '1') || (c1 == '0' && c2 == '0')){
+                        wynik = InformatycznyFunkcje.changeStringAt(i, zero, wynik);
+                    } else {
+                        wynik = InformatycznyFunkcje.changeStringAt(i, jeden, wynik);
+                    }
+                    
+                    break;
+            }
+            
+            
+        
+        }
+        
+        bin_num = wynik;
+        bin_num2 = "000000000000";
+        fixBits();
+        refresh();
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        drugaLiczbaPanel.setVisible(!drugaLiczbaPanel.isVisible());
+        jToggleButton1.setText(drugaLiczbaPanel.isVisible() ? "schowaj druga liczbe" : "pokaz druga liczbe");
+        
+        
+        
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        int n = Integer.parseInt(newton_n.getText());
+        int k = Integer.parseInt(newton_k.getText());
+        
+        k = n-k > k ? n-k : k;
+        
+        int wynik = 1;
+        for(int i = n; i > k; i--){
+            wynik *= i;
+            
+        }
+        
+        k = n - k;
+        int f = 1;
+        for(int i = 2; i <= k; i++){
+            f*= i;
+            
+        }
+        
+        wynik/= f;
+        
+        newton_wynik.setText(wynik + "");
+        
+        
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void newton_nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newton_nActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newton_nActionPerformed
+    
+    
+    public void fixBits(){
+        JToggleButton[] butts = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12};
+        JToggleButton[] butts2 = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12};
+        
+        
+        for(int i = 0;i < 12; i++){
+            JToggleButton comp = butts[i];
+            
+               comp.setText(bin_num.charAt(i)+"");
+                    
+                if(comp.getText().equals("1")){
+                    comp.setSelected(true);
+                } else {
+                    comp.setSelected(false);
+                }
+        }
+        
+        for(int i = 0;i < 12; i++){
+            JToggleButton comp = butts2[i];
+            
+               comp.setText(bin_num2.charAt(i)+"");
+                    
+                if(comp.getText().equals("1")){
+                    comp.setSelected(true);
+                } else {
+                    comp.setSelected(false);
+                }
+        }
+        
+        
+        /*
+        a1.setText(bin_num.charAt(bin_num.length()-1) + "");
+        a2.setText(bin_num.charAt(bin_num.length()-2) + "");
+        a3.setText(bin_num.charAt(bin_num.length()-3) + "");
+        a4.setText(bin_num.charAt(bin_num.length()-4) + "");
+        a5.setText(bin_num.charAt(bin_num.length()-5) + "");
+        a6.setText(bin_num.charAt(bin_num.length()-6) + "");
+        a7.setText(bin_num.charAt(bin_num.length()-7) + "");
+        a8.setText(bin_num.charAt(bin_num.length()-8) + "");
+        a9.setText(bin_num.charAt(bin_num.length()-9) + "");
+        a10.setText(bin_num.charAt(bin_num.length()-10) + "");
+        a11.setText(bin_num.charAt(bin_num.length()-11) + "");
+        a12.setText(bin_num.charAt(bin_num.length()-12) + "");
+        */
+        
+    }
+    
+    
+    
     
     public int NWD(int a, int b){
         while(a != b){
@@ -1417,7 +2184,38 @@ public class Panel extends javax.swing.JFrame {
     
     public void refresh(){
         jLabel1.setText(wyswietlacz);
+        binum.setText(bin_num);
+        decnum.setText(InformatycznyFunkcje.binToDec(bin_num) + "");
+        binum2.setText(bin_num2);
+        decnum2.setText(InformatycznyFunkcje.binToDec(bin_num2) + "");
+        
+    }
     
+    
+    public void handleTheClick(JToggleButton jToggleButton, int k, boolean flag){
+        if(flag){
+            if(jToggleButton.getText().equals("1")){
+                jToggleButton.setText("0");
+                bin_num = InformatycznyFunkcje.changeStringAt(k - 1, '0', bin_num);
+            } else {
+                jToggleButton.setText("1");
+                bin_num = InformatycznyFunkcje.changeStringAt(k - 1, '1', bin_num);
+            } 
+        } else {
+            if(jToggleButton.getText().equals("1")){
+                jToggleButton.setText("0");
+                bin_num2 = InformatycznyFunkcje.changeStringAt(k - 1, '0', bin_num2);
+            } else {
+                jToggleButton.setText("1");
+                bin_num2 = InformatycznyFunkcje.changeStringAt(k - 1, '1', bin_num2);
+            } 
+        
+        
+        }
+
+        
+        
+        refresh();
     }
     
     
@@ -1460,12 +2258,43 @@ public class Panel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AC;
+    private javax.swing.JToggleButton a1;
+    private javax.swing.JToggleButton a10;
+    private javax.swing.JToggleButton a11;
+    private javax.swing.JToggleButton a12;
+    private javax.swing.JToggleButton a2;
+    private javax.swing.JToggleButton a3;
+    private javax.swing.JToggleButton a4;
+    private javax.swing.JToggleButton a5;
+    private javax.swing.JToggleButton a6;
+    private javax.swing.JToggleButton a7;
+    private javax.swing.JToggleButton a8;
+    private javax.swing.JToggleButton a9;
+    private javax.swing.JToggleButton b1;
+    private javax.swing.JToggleButton b10;
+    private javax.swing.JToggleButton b11;
+    private javax.swing.JToggleButton b12;
+    private javax.swing.JToggleButton b2;
+    private javax.swing.JToggleButton b3;
+    private javax.swing.JToggleButton b4;
+    private javax.swing.JToggleButton b5;
+    private javax.swing.JToggleButton b6;
+    private javax.swing.JToggleButton b7;
+    private javax.swing.JToggleButton b8;
+    private javax.swing.JToggleButton b9;
+    private javax.swing.JLabel binum;
+    private javax.swing.JLabel binum2;
+    private javax.swing.JComboBox<String> bramkaCombi;
+    private javax.swing.JLabel decnum;
+    private javax.swing.JLabel decnum2;
     private javax.swing.JTextField denominator1;
     private javax.swing.JTextField denominator2;
     private javax.swing.JLabel denominator_wynik;
     private javax.swing.JButton dodaj;
     private javax.swing.JTabbedPane dodatkowe_funkcje;
     private javax.swing.JButton dot;
+    private javax.swing.JPanel drugaLiczbaPanel;
+    private javax.swing.JCheckBox dzialanieNot;
     private javax.swing.JButton dziel;
     private javax.swing.JButton f_cbrt;
     private javax.swing.JButton f_cos;
@@ -1484,7 +2313,9 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> fraction_signs;
     private javax.swing.JButton historia_zamknij;
     private javax.swing.JButton historia_zapisz;
+    private javax.swing.JPanel infPanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1492,12 +2323,18 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -1517,11 +2354,14 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel klawiatura_funkcyjna;
     private javax.swing.JPanel klawiatura_podstawowa;
+    private javax.swing.JPanel liczba_1;
     private javax.swing.JButton mnoz;
+    private javax.swing.JTextField newton_k;
+    private javax.swing.JTextField newton_n;
+    private javax.swing.JLabel newton_wynik;
     private javax.swing.JTextField numerator1;
     private javax.swing.JTextField numerator2;
     private javax.swing.JLabel numerator_wynik;

@@ -3,9 +3,12 @@ package kalkulator;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -58,7 +61,7 @@ public class Ustawienia {
             comp.setBackground(background_color);
             this.applySettings(comp);
         }
-        if(comp instanceof JButton){
+        if(comp instanceof JButton || comp instanceof JToggleButton || comp instanceof JTextField || comp instanceof JComboBox){
             comp.setBackground(button_color);
         }
             comp.setForeground(font_color);    
