@@ -1616,7 +1616,10 @@ public class Panel extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        do_wyswietlacza(Math.PI + "");
+        
+       
+            do_wyswietlacza(Math.PI + "");
+       
         
         refresh();
         
@@ -1624,31 +1627,50 @@ public class Panel extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        do_wyswietlacza(Math.E + "");
+               
+            do_wyswietlacza(Math.E + "");
+        
+        
         refresh();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        do_wyswietlacza((1 + Math.sqrt(5))/2 + "");
+               
+            do_wyswietlacza((1 + Math.sqrt(5))/2 + "");
+        
+        
+        
+        
         refresh();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        do_wyswietlacza("6.6260687652");
+                
+            do_wyswietlacza("6.6260687652");
+        
+        
+        
         refresh();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        do_wyswietlacza("6.67");
+               
+             do_wyswietlacza("6.67");
+       
+       
         refresh();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        do_wyswietlacza("9.81");
+                
+            do_wyswietlacza("9.81");
+        
+        
+        
         refresh();
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -2109,8 +2131,8 @@ public class Panel extends javax.swing.JFrame {
     
     public void dzialanie(){
         
-        
-        String symbol = "";
+        try {
+            String symbol = "";
         HISTORY += CURRENT;
         if("dodaj".equals(wybrane_dzialanie)){
             CURRENT += Double.parseDouble(wyswietlacz);
@@ -2165,6 +2187,14 @@ public class Panel extends javax.swing.JFrame {
         wyswietlacz = CURRENT + "";
         wybrane_dzialanie = "default";
         refresh();
+        
+        } catch (java.lang.NumberFormatException e){
+            wyswietlacz="0";
+            CURRENT=0;
+        }
+        
+        
+        
     }
     
     
