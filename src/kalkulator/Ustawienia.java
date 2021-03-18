@@ -17,9 +17,9 @@ import javax.swing.JToggleButton;
 public class Ustawienia {
     
     //domyślne wartości
-    Color font_color = Color.BLACK;
-    Color button_color = Color.GRAY;
-    Color background_color = Color.WHITE;
+    Color font_color = Color.WHITE;
+    Color button_color = Color.RED;
+    Color background_color = Color.BLACK;
 
     public Ustawienia() {
         
